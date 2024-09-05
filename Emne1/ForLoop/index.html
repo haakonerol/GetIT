@@ -61,7 +61,7 @@
          type="text" 
          name="input" 
          id="input"              
-         oninput="inputSentence = this.value" >
+         oninput="inputSentence = this.value.trim()" >
       </form>
 
       <div class="buttons">
@@ -77,6 +77,7 @@
         `;
       }
       updateView();
+      
       /*--------------------------------------------------*/
       //Controllers
       function counterVowels() {
@@ -86,8 +87,7 @@
             let vowelLetter = vowels[j];
             if (sentenceLetter == vowelLetter) {
             }
-            console.log(sentenceLetter);
-            console.log(vowelLetter);
+            
           }
         }
       }
