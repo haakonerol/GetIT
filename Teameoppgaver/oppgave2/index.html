@@ -3,9 +3,134 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team Oppgave2</title>
+    <title>Virtuelt Kjæledyr</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      #pet {
+        font-size: 100px;
+        border: 2px;
+        border-width: 0;
+      }
+      .button {
+        font-size: 20px;
+        margin: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      .buttonPet {
+        cursor: pointer;
+      }
+      /* .navn{
+        color: red;
+        text-decoration-color: red;
+        text-shadow: black;
+      } */
+    </style>
   </head>
   <body>
-    <h1>Welcome to </h1>
+    <div id="app"></div>
+    <script>
+      //Model
+
+      let seconds = 0;
+      let intervalSulten;
+      let intervalSkitten;
+      let intervalBored;
+      let message = "Kjæledyret ditt er lykkelig!";
+      let navn = "Katt";
+
+      //View
+      function updateView() {
+        document.getElementById("app").innerHTML = `
+          <p id="navn">${navn}</p>
+          <div class="buttonPet" onclick=changeName() id="pet">🐱</div>
+          <p id="message">${message}</p>
+          <button class="button" onclick="feed()">Gi mat</button>
+          <button class="button" onclick="play()">Lek</button>
+          <button class="button" onclick="clean()">Vask</button>
+        
+        `;
+      }
+      updateView();
+
+      //Controllers
+      startSulten();
+      startSkitten();
+      startBored();
+
+      function sulten() {
+        // for å gjøre katten sulten hvert 5. sekund
+        message = "Pusur er sulten! Det rumler i magen min, gi meg mat!";
+        updateView();
+      }
+      function skitten() {
+        // for å gjøre katten skitten hvert 10. sekund
+        message = "Pusur er skitten! Uff så jeg stinker, vask meg!";
+        updateView();
+      }
+      function bored() {
+        // for å gjøre katten bored hvert 15. sekund
+        message = "Pusur vil leke ! Jeg kjeder meg, lek med meg!";
+        updateView();
+      }
+      function feed() {
+        clearInterval(intervalSulten);
+        //timerSulten()
+        setTimer(sulten, 20000);
+        message = "Det smakte godt, jeg er mett!";
+        updateView();
+      }
+      function play() {
+        clearInterval(intervalBored);
+        //timerBored()
+        setTimer(bored, 30000);
+        message = "Du er så hyggelig med meg, jeg er heldig som har deg!";
+        updateView();
+      }
+      function clean() {
+        clearInterval(intervalSkitten);
+        //timerSkitten()
+        setTimer(skitten, 25000);
+        message = "Det var godt med en vask, nå føler jeg meg ren!";
+        updateView();
+      }
+      function changeName() {
+        navn = "Heisann,jeg heter Pusur";
+        updateView();
+      }
+
+      //Starter angitte intervaller på X antall sekunder//
+
+      function startSulten() {
+        intervalSulten = setInterval(sulten, 5000); //Sett hvilken tid det går mellom hver sekvens//
+      }
+      function startSkitten() {
+        intervalSkitten = setInterval(skitten, 10000); //Sett hvilken tid det går mellom hver sekvens//
+      }
+      function startBored() {
+        intervalBored = setInterval(bored, 15000); //Sett hvilken tid det går mellom hver sekvens//
+      }
+
+      //Starter angitte intervaller på ny etter X antall sekunder//
+
+      // function timerSulten(){
+      //   setTimeout(sulten,20000) //Sett hvilken tid det går mellom hver sekvens//
+      // }
+      // function timerSkitten(){
+      //   setTimeout(skitten,25000) //Sett hvilken tid det går mellom hver sekvens//
+      // }
+      // function timerBored(){
+      //   setTimeout(bored,30000) //Sett hvilken tid det går mellom hver sekvens//
+      // }
+
+      // DRY-Metode //
+      function setTimer(feel, milisecond) {
+        setTimeout(feel, milisecond);
+      }
+    </script>
   </body>
 </html>

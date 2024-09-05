@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Loop</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      #app {
+        margin: 50px 0;
+      }
+
+      input {
+        width: 300px;
+        padding: 5px;
+        border: 0.5px solid;
+        border-radius: 5px;
+      }
+
+      .buttons {
+        margin: 20px 0;
+
+        button {
+          margin: 5px;
+          width: 120px;
+          padding: 5px;
+          border: 0.5px solid;
+          border-radius: 7px;
+          cursor: pointer;
+          box-shadow: 3px 3px 5px;
+          transition: transform 0.1s ease;
+        }
+      }
+
+      button:active {
+        transform: scale(0.95);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script>
+      //Model
+      let vowels = "aeiouyæøå";
+      let vowelCount = null;
+      let inputReversed = "";
+      let inputReversedWord = "";
+      let inputSentence = "";
+      /*--------------------------------------------------*/
+      //View
+      function updateView() {
+        document.getElementById("app").innerHTML = `
+      <form>
+        <label for="input">Skriv setningen:</label>
+        <input 
+         type="text" 
+         name="input" 
+         id="input"              
+         oninput="inputSentence = this.value" >
+      </form>
+
+      <div class="buttons">
+        <button onclick = "counterVowels()">Tell <br/>vokaler</button>
+        <button>Reverser setningen</button>
+        <button>Reverser ordene i setningen</button>
+      </div>
+      <div class="results">
+        <p>Antall vokaler:<br /></p>
+        <p>Reversert setning:<br /></p>
+        <p>Setning med reversert ord:<br /></p>
+      </div>
+        `;
+      }
+      updateView();
+      /*--------------------------------------------------*/
+      //Controllers
+      function counterVowels() {
+        for (let i = 0; i < inputSentence.length; i++) {
+          let sentenceLetter = inputSentence[i];
+          for (let j = 0; j < vowels.length; j++) {
+            let vowelLetter = vowels[j];
+            if (sentenceLetter == vowelLetter) {
+            }
+            console.log(sentenceLetter);
+            console.log(vowelLetter);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
