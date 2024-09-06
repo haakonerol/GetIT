@@ -39,6 +39,9 @@
       button:active {
         transform: scale(0.95);
       }
+      li {
+        list-style: none;
+      }
     </style>
   </head>
 
@@ -47,10 +50,10 @@
     <script>
       //Model
       let vowels = "aeiouyæøå";
-      let vowelCount = null;
+      let inputSentence = "";
       let inputReversed = "";
       let inputReversedWord = "";
-      let inputSentence = "";
+
       /*--------------------------------------------------*/
       //View
       function updateView() {
@@ -66,30 +69,71 @@
 
       <div class="buttons">
         <button onclick = "counterVowels()">Tell <br/>vokaler</button>
-        <button>Reverser setningen</button>
-        <button>Reverser ordene i setningen</button>
+        <button onclick="sentenceReverser()">Reverser setningen</button>
+        <button onclick="wordReserver()">Reverser ordene i setningen</button>
       </div>
       <div class="results">
-        <p>Antall vokaler:<br /></p>
-        <p>Reversert setning:<br /></p>
-        <p>Setning med reversert ord:<br /></p>
+        <h5>Orginal setning:</h5>
+        <p id="orginal"></p>
+        <h5>Antall vokaler:
+          <ul id="list">
+            
+          </ul></h5>
+        <h5>Reversert setning:</h5>
+        <p id="allReversed"></p>
+        <h5>Setning med reversert ord:</h5>
+        <p id="wordReversed"></p>
       </div>
         `;
       }
       updateView();
-      
+
       /*--------------------------------------------------*/
       //Controllers
       function counterVowels() {
-        for (let i = 0; i < inputSentence.length; i++) {
-          let sentenceLetter = inputSentence[i];
-          for (let j = 0; j < vowels.length; j++) {
-            let vowelLetter = vowels[j];
-            if (sentenceLetter == vowelLetter) {
+        let vowelCounts = "";
+        for (let i = 0; i < vowels.length; i++) {
+          let vowelLetter = vowels.charAt(i);
+          let count = 0;
+          for (let j = 0; j < inputSentence.length; j++) {
+            if (vowelLetter == inputSentence.charAt(j).toLowerCase()) {
+              count++;
             }
-            
+          }
+          if (count > 0) {
+            vowelCounts = `${vowelLetter}:${count} `;
+            document.getElementById(
+              "list"
+            ).innerHTML += `<li>${vowelCounts}</li>`;
           }
         }
+      }
+
+      function sentenceReverser() {
+        for (let i = inputSentence.length - 1; i >= 0; i--) {
+          inputReversed += inputSentence.charAt(i);
+        }
+        document.getElementById("allReversed").innerText = inputReversed;
+      }
+
+      function wordReserver() {
+        let word = "";
+        for (let i = 0; i <= inputSentence.length; i++) {
+          let reversedWord = "";
+          if (inputSentence.charAt(i) != " " && i != inputSentence.length) {
+            word += inputSentence.charAt(i);
+            console.log(word);
+          } else {
+            for (let j = word.length - 1; j >= 0; j--) {
+              reversedWord += word.charAt(j);
+              console.log(reversedWord);
+            }
+            inputReversedWord += reversedWord + " ";
+            word = "";
+          }
+        }
+        document.getElementById("wordReversed").innerText =
+          inputReversedWord.trim();
       }
     </script>
   </body>
