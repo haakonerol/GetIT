@@ -1,15 +1,14 @@
 //Model
-let message="";
-let coolnessProgress=50;
-let fuelProgress=100;
-let fuelColor = document.getElementById("fuelBar");
-let fuelTimer;
+let message = "";
+let coolnessProgress = 50;
+let fuelProgress = 100;
 
+let fuelTimer;
 
 /*-------------------------------------------------*/
 //View
 function updateView() {
-    document.getElementById("app").innerHTML = `
+  document.getElementById("app").innerHTML = `
           <div id="coolness">Kulhet:
             <div id="coolnessBar">${coolnessProgress}%</div>
           </div>
@@ -38,11 +37,11 @@ function updateView() {
               </ul>
           </div>
             `;
-            setTimer()
-  }
-  
-  updateView();
-  
+  setTimer();
+}
+
+updateView();
+
 /*-------------------------------------------------*/
 //Controllers
 
@@ -54,19 +53,20 @@ function toggleDropdown() {
     menu.style.display = "block";
   }
 }
+let fuelColor = document.getElementById("fuelBar");
 function decay() {
   fuelColor.style.width = fuelProgress + "%";
-  fuelProgress -= 20;
   console.log(fuelProgress);
+  fuelProgress -= 20;
 }
 function setTimer() {
-  
-  if (fuelProgress >0) {
+  if (fuelProgress > 0) {
     fuelTimer = setInterval(decay, 1000);
+  } else if (fuelProgress === 0) {
+    clearInterval(fuelTimer);
   }
-  else if (fuelProgress=0){clearInterval(fuelTimer);}
 }
-//setTimer();
+setTimer();
 function drive() {}
 function receive() {}
 function greet() {}
