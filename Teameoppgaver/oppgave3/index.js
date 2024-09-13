@@ -110,7 +110,7 @@ function setTimer() {
   fuelTimer = setInterval(decayFuel, 1000);
   itemTimer = setInterval(showItem, 5000);
 }
-//setTimer();
+setTimer();
 
 function showItem() {
   let index = Math.floor(Math.random() * itemArray.length);
