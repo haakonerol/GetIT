@@ -1,65 +1,66 @@
 body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    width: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100vh;
+}
+#coolness,
+#fuel {
+  width: 350px;
+}
+#car {
+  width: 300px;
+}
+.kompis {
+  width: 300px;
+}
+.main {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid;
+}
+#dropdown {
+  width: 150px;
+  display: inline-table;
+}
+#hilsList {
+  display: none;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  li {
+    list-style-type: none;
+    padding: 5px 10px;
   }
-  #coolness,
-  #fuel {
-    width: 350px;
-    
-    
-  }
-  #car {
-    width: 300px;
-  }
-  .kompis {
-    width: 300px;
-  }
-  .main {
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid;
-  }
-  #dropdown {
-    width: 150px;
-    display: inline-table;
-  }
-  #hilsList {
-    display: block;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    li {
-      list-style-type: none;
-      padding: 5px 10px;
-    }
-  }
-  li:hover {
-    transform: scale(1.15);
-  }
-  button {
-    margin: 5px;
-    width: 120px;
-    padding: 5px;
-    border: 0.5px solid;
-    border-radius: 7px;
-    cursor: pointer;
-    box-shadow: 3px 3px 5px;
-    transition: transform 0.1s ease;
-  }
-  button:active {
-    transform: scale(0.95);
-  }
-  #coolnessBar{
-    background-color: yellow;
-    border: 2px solid;
-    width: 50%;
-  }
-  #fuelBar{
-    background-color: green;
-    border: 2px solid;
-    width: 100%;
-    transition: width 1s ease;
-  }
+}
+li:hover {
+  transform: scale(1.15);
+}
+button {
+  margin: 5px;
+  width: 120px;
+  padding: 5px;
+  border: 0.5px solid;
+  border-radius: 7px;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px;
+  transition: transform 0.1s ease;
+}
+button:active {
+  transform: scale(0.95);
+}
+#coolnessBar {
+  background-color: yellow;
+  border: 2px solid;
+  width: 50%;
+}
+#fuelBar {
+  background-color: green;
+  border: 2px solid;
+  width: 100%;
+  transition: width 1s ease;
+}
+.itemImg {
+  width: 200px;
+}
