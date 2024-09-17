@@ -1,3 +1,13 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#toDoTable{
+    margin: 100px auto;
+}
+
 table, tr, td, th {
     border: 1px solid lightgray;
     border-collapse: collapse;

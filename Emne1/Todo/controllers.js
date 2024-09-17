@@ -28,5 +28,5 @@ function updateToDo(index){
     toDos[index].description = inputTag.value
     toDos[index].editMode = false;
     showTable();
-    console.log(toDos);
+    //console.log(toDos);
 }
