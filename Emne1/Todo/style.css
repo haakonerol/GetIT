@@ -5,7 +5,7 @@ body{
     text-align: center;
 }
 #toDoTable{
-    margin: 100px auto;
+    margin: 100px auto 10px;
 }
 
 table, tr, td, th {
@@ -18,8 +18,8 @@ td, th {
 }
 
 th {
-    background-color: darkblue;
-    border: 1px solid darkblue;
+    background-color: rgb(123, 123, 202);
+    border: 1px solid rgb(123, 123, 202);
     color: white;
 }
 

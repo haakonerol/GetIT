@@ -10,9 +10,11 @@
     <table id="toDoTable"> 
         
     </table>
-    <p>
-        <input id="toDoDescription" type="text"><button onclick="addToDo()">Add task</button>
-    </p>
+    <form id="operators">
+        <input id="toDoDescription" type="text" onchange="activateAddBtn()" placeholder="Enter the task" required>
+        <br/><br/><input id="toDoPerson" type="text" placeholder="Enter your name" required><br><br>
+        <button id="add" onclick="addToDo()" disabled>Add task</button>
+    </form>
     
 
     <script src="model.js"></script>
