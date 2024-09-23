@@ -1,0 +1,22 @@
+
+.box {
+    padding: 6px;
+    font-size: 150%;
+    height: 20px;
+}
+
+.color {
+    border: 1px solid gray;
+    border-radius: 15px;
+    margin: 10px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.topBox {
+    padding: 4px 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #484848;
+    color: white;
+}
