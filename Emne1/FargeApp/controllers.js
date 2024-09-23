@@ -30,3 +30,7 @@ function filterByCreator(creator){
     //console.log(creator);
 
 }
+function sortBy(param){
+    model.sort=param;
+    updateView()
+}

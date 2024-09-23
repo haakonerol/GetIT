@@ -1,6 +1,9 @@
 function updateView() {
   document.getElementById("app").innerHTML = `
         ${createAddColorHtml()}
+        <button onclick="sortBy(null)">Fjern sortering</button>
+        <button onclick="sortBy('rating')">Sorter etter rating</button>
+        <button onclick="sortBy('name')">Sorter etter navn</button>
         ${model.creatorFilter===null ? "":`<button onclick="filterByCreator(null)">Fjern filter</button>`}
         <div class="colors">
         ${createColorsHtml()}
@@ -46,9 +49,12 @@ function createAddColorHtml() {
 }
 function createColorsHtml() {
   let colorsHtml = "";
+
+  
   let colors= model.colorThemes
   //console.log(colors);
-  colors.forEach((color) => {
+  let colorThemes = sort(colors)
+  colorThemes.forEach((color) => {
     
     let index= colors.indexOf(color)
     //console.log(index);
@@ -70,4 +76,17 @@ function createColorsHtml() {
         `;
   });
   return colorsHtml;
+}
+
+function sort(colorThemesBase){
+    if(model.sort===null) return colorThemesBase;
+    let colorThemes=[...colorThemesBase]
+    if(model.sort==="rating"){
+        colorThemes.sort((a,b)=>b.rating-a.rating);
+    return colorThemes;
+    }else if(model.sort==="name"){
+        colorThemes.sort((a,b)=>a.creator.localeCompare(b.creator));
+    return colorThemes;
+    }
+    
 }
