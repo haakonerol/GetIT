@@ -1,19 +1,32 @@
 
 function startAdd(){
-    isAdding=true;
+    model.isAdding=true;
     updateView();
 }
 function canselAddColor(){
-    isAdding=false;
+    model.isAdding=false;
     updateView();
 }
 function addColor(){
-    colors.push(addColorName);
-    isAdding= false;
-    addColorName="";
+    let colorTheme={
+        foregroundColor:model.addColorName,
+        backgroundColor:model.backgroundColor,
+        highlightColor:model.highlightColor,
+        rating:model.rating,
+        creator:model.creator,
+    }
+    model.colorThemes.unshift(colorTheme);
+    model.isAdding= false;
+    colorTheme={};
     updateView();
 }
 function deleteColor(i){
-    colors.splice(i,1);
+    model.colorThemes.splice(i,1);
     updateView();
+}
+function filterByCreator(creator){
+    model.creatorFilter=creator;
+    updateView();
+    //console.log(creator);
+
 }
