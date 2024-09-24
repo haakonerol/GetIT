@@ -4,7 +4,11 @@ function updateView() {
         <button onclick="sortBy(null)">Fjern sortering</button>
         <button onclick="sortBy('rating')">Sorter etter rating</button>
         <button onclick="sortBy('name')">Sorter etter navn</button>
-        ${model.creatorFilter===null ? "":`<button onclick="filterByCreator(null)">Fjern filter</button>`}
+        ${
+          model.creatorFilter === null
+            ? ""
+            : `<button onclick="filterByCreator(null)">Fjern filter</button>`
+        }
         <div class="colors">
         ${createColorsHtml()}
         </div>
@@ -50,25 +54,28 @@ function createAddColorHtml() {
 function createColorsHtml() {
   let colorsHtml = "";
 
-  
-  let colors= model.colorThemes
+  let colors = model.colorThemes;
   //console.log(colors);
-  let colorThemes = sort(colors)
+  let colorThemes = sort(colors);
   colorThemes.forEach((color) => {
-    
-    let index= colors.indexOf(color)
+    let index = colors.indexOf(color);
     //console.log(index);
-    if(model.creatorFilter!=color.creator&&model.creatorFilter != null) return;
+    if (model.creatorFilter != color.creator && model.creatorFilter != null)
+      return;
     colorsHtml += `
             <div class="color">
                 <div class="topBox">
-                    <div>Theme ${index+1}</div>
+                    <div>Theme ${index + 1}</div>
                     <button onclick="deleteColor(${index})">x</button>
                 </div>
                 
-                <div style="background-color:${color.backgroundColor}; color:${color.foregroundColor}" class="box">
+                <div style="background-color:${color.backgroundColor}; color:${
+      color.foregroundColor
+    }" class="box">
                     Rating:${color.rating}
-                    Laget av:<a href="javascript:filterByCreator('${color.creator}')">${color.creator}</a>
+                    Laget av:<a href="javascript:filterByCreator('${
+                      color.creator
+                    }')">${color.creator}</a>
                     
                     <span style="color:${color.highlightColor}">Utheving</span>
                 </div>
@@ -78,15 +85,14 @@ function createColorsHtml() {
   return colorsHtml;
 }
 
-function sort(colorThemesBase){
-    if(model.sort===null) return colorThemesBase;
-    let colorThemes=[...colorThemesBase]
-    if(model.sort==="rating"){
-        colorThemes.sort((a,b)=>b.rating-a.rating);
+function sort(colorThemesBase) {
+  if (model.sort === null) return colorThemesBase;
+  let colorThemes = [...colorThemesBase];
+  if (model.sort === "rating") {
+    colorThemes.sort((a, b) => b.rating - a.rating);
     return colorThemes;
-    }else if(model.sort==="name"){
-        colorThemes.sort((a,b)=>a.creator.localeCompare(b.creator));
+  } else if (model.sort === "name") {
+    colorThemes.sort((a, b) => a.creator.localeCompare(b.creator));
     return colorThemes;
-    }
-    
+  }
 }
