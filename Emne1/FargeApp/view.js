@@ -42,13 +42,12 @@ function createAddColorHtml() {
         value="${model.creator ?? ""}"
         /> --><br>
         Rating:
-        ${createInputHtml("rating")}
-         <!-- <input
+         <input
         type="number"
         min="0.0" max="6.0" step="0.1"
         oninput="model.rating=this.value"
         value="${model.rating ?? ""}"
-        /> --> <br>
+        />  <br>
 
         <button onclick="addColor()">Legg til ny farge</button>
         <button onclick="canselAddColor()">Avbryt</button>
