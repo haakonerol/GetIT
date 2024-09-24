@@ -21,30 +21,34 @@ function createAddColorHtml() {
   if (!model.isAdding) return "<button onclick='startAdd()'>+</button>";
   return `
         Forgrunnsfarget:
-        <input
+        ${createInputHtml("foregroundColor")}
+        <!-- <input
         type="text"
         oninput="model.foregroundColor=this.value"
         value="${model.foregroundColor ?? ""}"
-        /><br>
+        /> --><br>
         Bakgrunnsfarget:
-        <input
+        ${createInputHtml("backgroundColor")}
+        <!-- <input
         type="text"
         oninput="model.backgroundColor=this.value"
         value="${model.backgroundColor ?? ""}"
-        /><br>
+        /> --><br>
         Laget av: 
-        <input
+        ${createInputHtml("creator")}
+        <!-- <input
         type="text"
         oninput="model.creator=this.value"
         value="${model.creator ?? ""}"
-        /><br>
+        /> --><br>
         Rating:
-         <input
+        ${createInputHtml("rating")}
+         <!-- <input
         type="number"
         min="0.0" max="6.0" step="0.1"
         oninput="model.rating=this.value"
         value="${model.rating ?? ""}"
-        />
+        /> --> <br>
 
         <button onclick="addColor()">Legg til ny farge</button>
         <button onclick="canselAddColor()">Avbryt</button>
@@ -95,4 +99,15 @@ function sort(colorThemesBase) {
     colorThemes.sort((a, b) => a.creator.localeCompare(b.creator));
     return colorThemes;
   }
+}
+function createInputHtml(param){
+    let html = `
+    <input
+        type="text"
+        oninput="model.param=this.value"
+        value="${model.param ?? ""}"
+        />
+    
+    `;
+    return html;
 }
