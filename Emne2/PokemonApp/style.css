@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+.pokemon {
+  text-align: end;
+}
+.player {
+  text-align: start;
+}
+.buttons {
+  width: 50%;
+  margin: 5px auto;
+}
+button {
+  width: 100px;
+  cursor: pointer;
+}
+img {
+  width: 250px;
+  height: 300px;
+}
+h3 {
+  padding-right: 100px;
+}
+h2 {
+  padding-left: 90px;
+}
