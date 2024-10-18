@@ -1,0 +1,71 @@
+
+Hei Kaja Kortfilm
+
+Takk for en hyggelig samtale om ditt nye prosjekt!
+
+ Vi forstår at du ønsker å ha en egen nettside med ratingsystem for filmer, og en egen profil med profilbilde. Du skal kunne gi rating og legge til kommentarer på filmer.
+
+ Applikasjonen tar hensyn til:
+- Hovedside
+    - Forslag til filmer basert på dine preferanser og utvalg.
+
+    - Filmpresentasjoner som inneholder tittel, sjanger, årstall og rating.
+
+    - Søkefelt etter navn, sjanger, årstall, skuespiller osv.
+
+ - Profilside   
+    - Legge til bilde av deg selv og beskrivelse om deg selv.
+
+    - Legge til favoritt sjanger.
+
+    - Legge til favorittfilmer.
+
+    - Kunne se filmer som hun har gitt rating og kommentarer på.
+
+ I starten av applikasjonen er det to deler:
+
+    1. Header:
+
+        - Filmer.
+
+        - Min profil.
+
+    2. Main:
+
+        - Filmer.
+
+            - Søkefelt.
+
+            - Presentasjon av filmer med best rating basert på dine preferanser.
+
+        - Min profil.
+
+            - Bilde.
+
+            - Beskrivelse av seg selv.
+
+            - Liste av favorittfilmer og sjanger.
+
+            - Liste av kommentarene og ratingen.
+
+   
+
+Etter teammøte er det noen spørsmål vi har til deg:
+
+    - Er det noen spesielle preferanser du vil vi skal legge til?
+
+    - Eller vil du ha en funksjon der du legger til preferanser selv? Som en check-box?
+
+    - Ønsker du en footer på nettsiden din?
+
+    - Og et siste spørsmål: Hvor flink er du med data? Har du bra erfaring med nettsider og data? Dette kan være relevant i forhold til bestillingen.
+
+ Fint om du leser gjennom det vi har skrevet og se om vi har forstått deg riktig. Gi oss gjerne en tilbakemelding på det. Hvis det ikke stemmer helt, eller du hadde sett for deg noe annet, så tar vi gjerne en ny prat.
+
+ Ser frem til et fint kundeforhold med deg.
+
+ 
+
+Med vennlig hilsen.
+
+KlasseX / Team1

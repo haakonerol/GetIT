@@ -29,6 +29,8 @@ let model = {
         city: "New York",
         age: 23,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 2,
@@ -38,6 +40,8 @@ let model = {
         city: "Los Angeles",
         age: 25,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 3,
@@ -47,6 +51,8 @@ let model = {
         city: "Chicago",
         age: 30,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 4,
@@ -56,6 +62,8 @@ let model = {
         city: "Houston",
         age: 27,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 5,
@@ -65,6 +73,8 @@ let model = {
         city: "Phoenix",
         age: 35,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 6,
@@ -74,6 +84,8 @@ let model = {
         city: "Philadelphia",
         age: 22,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 7,
@@ -83,6 +95,8 @@ let model = {
         city: "San Antonio",
         age: 29,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 8,
@@ -91,6 +105,9 @@ let model = {
         password: "clarkpass",
         city: "San Diego",
         age: 26,
+        friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 9,
@@ -100,6 +117,8 @@ let model = {
         city: "Dallas",
         age: 32,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 10,
@@ -109,6 +128,8 @@ let model = {
         city: "San Jose",
         age: 28,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 11,
@@ -118,6 +139,8 @@ let model = {
         city: "Austin",
         age: 34,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 12,
@@ -127,6 +150,8 @@ let model = {
         city: "Jacksonville",
         age: 31,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 13,
@@ -136,6 +161,8 @@ let model = {
         city: "Fort Worth",
         age: 21,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 14,
@@ -145,6 +172,8 @@ let model = {
         city: "Columbus",
         age: 33,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 15,
@@ -154,6 +183,8 @@ let model = {
         city: "Charlotte",
         age: 24,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 16,
@@ -163,6 +194,8 @@ let model = {
         city: "Indianapolis",
         age: 27,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 17,
@@ -172,6 +205,8 @@ let model = {
         city: "Seattle",
         age: 29,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 18,
@@ -181,6 +216,8 @@ let model = {
         city: "Denver",
         age: 26,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 19,
@@ -188,6 +225,8 @@ let model = {
         email: "daniel.miller@example.com",
         password: "millerpass",
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
       {
         userId: 20,
@@ -197,6 +236,8 @@ let model = {
         city: "Boston",
         age: 25,
         friends: [],
+        frendsRequest:[],
+        userImg:null
       },
     ],
     comments: [
